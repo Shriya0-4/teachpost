@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main-page</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <main class="content">
+            <header class="header">
+                <div id="logo">TeachPost</div>
+                <nav class="navbar">
+                    <div><a href="/home">Announcement</a></div>
+                    <div><a href="/projects">Project</a></div>
+                    <div><a href="/feed">Feed</a></div>
+                </nav>
+                <div class="profile" onclick="toggleProfileAside()">
+                    <img src="assets/Generic avatar.jpg" alt="Profile Picture">
+                </div>
+            </header>
+
+            <section class="posts">
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <img src="assets/post2.jpg" alt="Post Image">
+                        <div class="post-actions">
+                            <span id="heart"><i class="fa-regular fa-heart"></i></span>
+                            <span id="comment"><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <div class="post-text">This is an official announcement text.</div>
+                        <div class="post-actions">
+                            <span id="heart"><i class="fa-regular fa-heart"></i></span>
+                            <span id="comment"><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <img src="assets/post1.jpg" alt="Post Image">
+                        <div class="post-text">This is an official announcement text accompanying the image.</div>
+                        <div class="post-actions">
+                            <span id="heart"><i class="fa-regular fa-heart"></i></span>
+                            <span id="comment"><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <img src="assets/post.jpg" alt="Post Image">
+                        <div class="post-actions">
+                            <span><i class="fa-regular fa-heart"></i></span>
+                            <span><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <img src="assests/post.jpg" alt="Post Image">
+                        <div class="post-actions">
+                            <span><i class="fa-regular fa-heart"></i></span>
+                            <span><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <img src="assets/post.jpg" alt="Post Image">
+                        <div class="post-actions">
+                            <span><i class="fa-regular fa-heart"></i></span>
+                            <span><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <img src="assets/post.jpg" alt="Post Image">
+                        <div class="post-actions">
+                            <span><i class="fa-regular fa-heart"></i></span>
+                            <span><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post">
+                    <div class="post-content">
+                        <p>Officially by <a href="">@user_id</a></p>
+                        <img src="assests/post.jpg" alt="Post Image">
+                        <div class="post-actions">
+                            <span><i class="fa-regular fa-heart"></i></span>
+                            <span><i class="fa-regular fa-comment"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <aside class="sidebar" id="profileAside">
+            <div class="user">
+                <div class="user-profile">
+                    <div><img src="assets/Generic avatar.jpg" alt=""></div>
+                    <h2><%= user.username %></h2>
+                </div>
+                <div class="user-content">
+                    <ul>
+                        <li><%= user.profession %></li>
+                        <li><%= user.email %></li>
+                        <li>Total Postes:<%= totalPosts %> </li>
+                        <li><a href="">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="close-btn" onclick="toggleProfileAside()"><i class="fa-solid fa-xmark"></i></button>
+        </aside>
+    </div>
+
+    
+    <script src="/scripts/script.js"></script>
+</body>
+</html>

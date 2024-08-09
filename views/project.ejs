@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <main class="content">
+            <header class="header">
+                <div id="logo">TeachPost</div>
+                <nav class="navbar">
+                    <div><a href="/home">Announcement</a></div>
+                    <div><a href="/projects">Project</a></div>
+                    <div><a href="/feed">Feed</a></div>
+                </nav>
+                <div class="profile" onclick="toggleProfileAside()">
+                    <img src="assets/Generic avatar.jpg" alt="Profile Picture">
+                </div>
+            </header>
+
+            <section class="projects">
+                <% projects.forEach(function(project) { %>
+                    <div class="project">
+                        <h2><%= project.title %></h2>
+                        <p>By <a href="#">@<%= project.user.username %></a></p>
+                        <p><%= project.description %></p>
+                        <p><a href="<%= project.githubLink %>" target="_blank">GitHub Link: <%= project.githubLink %></a></p>
+                        <button class="collaborate-btn" onclick="openRequestForm('<%= project.user._id %>')">Request Collaboration</button>
+                    </div>
+                <% }); %>
+            </section>
+
+            <button class="add-project-btn" onclick="openProjectForm()"><i class="fa fa-plus"></i></button>
+        </main>
+
+        
+        <aside class="sidebar" id="profileAside">
+            <div class="user">
+                <div class="user-profile">
+                    <div><img src="assets/Generic avatar.jpg" alt=""></div>
+                    <h2><%= user.username %></h2>
+                </div>
+                <div class="user-content">
+                    <ul>
+                        <li><%= user.profession %></li>
+                        <li><%= user.email %></li>
+                        <li>Projects Posted: <%= projectCount %></li>
+                        <li><a href="/logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <button class="close-btn" onclick="toggleProfileAside()"><i class="fa-solid fa-xmark"></i></button>
+        </aside>
+
+
+        <div class="project-form" id="projectForm">
+            <form action="/projects" method="POST">
+                <label for="title">Project Title:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="githubLink">GitHub Repo Link:</label>
+                <input type="text" id="githubLink" name="githubLink" required>
+                <button type="submit">Post Project</button>
+                <button type="button" onclick="closeProjectForm()">Cancel</button>
+            </form>
+        </div>
+        
+
+        
+        <div class="request-form" id="requestForm">
+            <form>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send Request</button>
+                <button type="button" onclick="closeRequestForm()">Cancel</button>
+                <input type="hidden" id="recipient" name="recipient">
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

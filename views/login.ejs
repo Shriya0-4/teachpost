@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/loginstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left"><img src="assets/Free Vector _ Abstract dynamic background with wavy lines.jpeg" alt="..">
+            <div class="text-on-image">TEACH POST</div>
+        </div>
+        <div class="right">
+            <form action="/login" method="post" autocomplete="off">
+                <h1>Login</h1>
+                <label for="name">Enter your Name:</label>
+                <input type="text" id="name" name="name" autocomplete="off">
+                <label for="email">Enter your Email:</label>
+                <input type="email" id="email" name="email" autocomplete="off">
+                <label for="password">Enter your Password:</label>
+                <input type="password" id="password" name="password" autocomplete="off">
+                <div class="profession">
+                    <input type="radio" id="Teacher" name="profession" value="Teacher" />
+                    <label for="Teacher">Teacher</label>
+                </div>
+                <div class="profession">
+                    <input type="radio" id="Student" name="profession" value="Student" />
+                    <label for="Student">Student</label>
+                </div>
+                <a href="register">Create Account</a>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
